@@ -1,0 +1,7 @@
+*.xlsx
+.env
+/mtpl/__pycache__
+/summarygen/__pycache__
+/summarygen/migrations
+db.sqlite3
+venv

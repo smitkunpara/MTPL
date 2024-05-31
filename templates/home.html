@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'home.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+   <!-- {% if accept %}
+   <table>
+      <tr>
+         <th>State</th>
+         <th>DPD</th>
+         <th>Count</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+         <td>{{i.state}}</td>
+         <td>{{i.dpd}}</td>
+         <td>{{i.count}}</td>
+      </tr>
+      {% endfor %}
+   </table>
+   {% else %} -->
+   <form method="POST" enctype="multipart/form-data">
+      <div class="drag-area">
+         <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+         <p class="uploadtext">Only .csv and .xlsx files are allowed.</p>
+         {% csrf_token %}
+         {{ form.as_p }}
+         <input type="file" name="file" hidden accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+      </div>
+      <div class="emailinput">
+         <input type="email" placeholder="Email" name="email" id="email" required>
+      </div>
+      <p class="warning">The result will be sent to the entered email.</p>
+      <div class="button-container">
+         <input class="submitbtn" type="submit" value="Submit">
+      </div>
+   </form>
+   {% if message %}
+   <script>
+      window.onload = function() {
+          Toast.show('{{ message }}', '{{ state }}');
+         };
+      </script>
+   {% endif %}
+   <!-- {% endif %} -->
+   <script src="{% static 'home.js' %}"></script>
+</body>
+
+</html>

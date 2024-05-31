@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #7d82dc;
+}
+.drag-area{
+  border: 2px dashed #fff;
+  height: 40vh;
+  width: 60vw;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: #fff;
+}
+.uploadtext{
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 10px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitbtn {
+  padding: 10px 25px;
+  font-size: max(1vw, 10px);
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.drag-area p {
+  font-size: max(1vw, 10px);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.toast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  max-width: 400px;
+  padding: 6px;
+  background: #cccccc;
+  color: #333333;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.toast--visible {
+  top: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.toast--success {
+  background: #00c02b;
+  border-color: #009d23;
+  color: #ffffff;
+}
+
+.toast--error {
+  background: #d50000;
+  border-color: #ba0000;
+  color: #ffffff;
+}
+
+
+.emailinput{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.emailinput input{
+  border-radius: 5px;
+  border: none;
+  width: 60vw;
+  height: 50%;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 20px;
+}
+.warning {
+  color: #fff;
+  margin-top: 2px;
+  font-size: small;
+}
